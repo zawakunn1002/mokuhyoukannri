@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目標管理サイト</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toastr.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/css_browser_selector.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="js/toastr.min.js"></script>
+</head>
+
+<body id="detail">
+   
+    <div class="wrapper">
+        <div class="innerBox">
+            <div class="template__top">
+                <p class="logo center">
+                    <span class="win-padding">LOGO</span>
+                </p>
+                <div class="template__player">
+                    <p><img src="images/index/white.png"></p>
+                    <p>
+                        <a href="">田中太郎</a>
+                    </p>
+                </div>
+            </div>
+            <form action="#" class="template__search">
+                <input class="search__box" type="search">
+                <input class="search__logo" type="image" src="images/index/search.png">
+            </form>
+
+
+            <div class="o-box is-detail">
+                <ul class="detail__btn__box">
+                    <li class="detail__btn center active">
+                        受付中
+                    </li>
+                    <li class="detail__btn center">
+                        他の人が挑戦中
+                    </li>
+                    <li class="detail__btn center">
+                        パーティ募集中
+                    </li>
+                </ul>
+                
+                <div class="detail__content show">
+                    <div class="detail__content__flex" id="tab1">
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div> 
+                        <div class="content__box"></div> 
+                    </div>
+                    
+                </div>
+
+                
+                <div class="detail__content">
+                    <div class="detail__content__flex" id="tab2">
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>  
+                    </div>
+                </div>
+
+
+                <div class="detail__content">
+                    <div class="detail__content__flex" id="tab3">
+                        <div class="content__box"></div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>
+                        <div class="content__box">
+                            <p class="detail__box__title center">
+                                クエストタイトルタイトル
+                            </p>
+                            <div class="detail__box__middle">
+                                <p>依頼者：田中太郎</p>
+                                <p>レア度<span class="color_red">A</span></p>
+                            </div>
+                            <div class="detail__box__middle">
+                                <p class="font_11">達成期限 <span class="font_12">10/12</span></p>
+                                <p>難易度<span class="color_yellow">★★★</span></p>
+                            </div>
+                            <div class="detail__box__text">
+                                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                            </div>
+                            <div class="detail__box__image">
+                                <div class="box__image__content">
+                                    <span class="box__image__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="detail__box__money">
+                                <div class="money__number right">
+                                    <span>1000</span>G
+                                </div>
+                                <div class="money__oube right">
+                                    <span>20</span>EXP
+                                </div>
+                            </div>
+                            <a class="o-btn is-detail js-modal-open" href="#" data-target="modal_detail">
+                                <img src="images/detail/detail_btn.png">
+                            </a>
+                        </div>  
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="modal js-modal" id="modal_detail">
+            <div class="modal__bg">
+                <div class="o-modal is-index_check">
+                    <p class="index_check__title center">クエストタイトルタイトル</p>
+                    <p class="index_check__challenge__number center">
+                        挑戦中1人
+                    </p>
+                    <div class="index_check__content">
+                        <div class="content__box">
+                            依頼者：田中太郎
+                        </div>
+                        <div class="content__box">
+                            <span class="f-11">達成期限</span>
+                            <span class="f-12">10/12</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">レア度</span>
+                            <span class="m-l70 color_r">A</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">難易度</span>
+                            <span class="m-l40 color_y">★★★</span>
+                        </div>
+                    </div>
+                    <div class="index_check__text">
+                        <p>
+                            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                        </p>
+                    </div>
+                    <div class="index_check__clear">
+                        <p class="clear__title">クリアした人</p>
+                        <p class="clear__human">
+                            <img src="images/index/index_modal_human.png">
+                            <img src="images/index/index_modal_human.png">
+                        </p>
+                    </div>
+                    <div class="index_check__reward">
+                        <p class="check__reward__title">報酬</p>
+                        <div class="index_reward__middle">
+                            <div class="index_reward__middle-left">
+                                <div class="middle-left__content">
+                                    <span class="middle-left__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="index_reward__middle-center">
+                                <p class="right">
+                                    <span>1,000</span>G
+                                </p>
+                            </div>
+                            <div class="index_reward__middle-right">
+                                <p class="right">
+                                    <span>20</span>EXP
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index_check__btn">
+                        <a id="one_challenge" href="index.html"><img src="images/detail/one_challenge_btn.png"></a>
+                        <a href="#" id="party_link"><img src="images/index/party_btn.png"></a>
+                        <a href="#"><img src="images/index/scout_btn.png"></a>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_party">
+            <div class="modal__bg">
+                <div class="o-modal is-party">
+                    <p class="party_logo">パーティ募集</p>
+                    <p class="party__title">クエストタイトルタイトルタイトルタイトルタイトル</p>
+                    <div class="o-form is-party">
+                        <form>
+                            <div class="form__top">
+                                <p>メッセージ欄</p>
+                                <p><textarea></textarea></p>
+                            </div>
+                            <div class="form__middle">
+                                <p>達成予定日</p>
+                                <p><input type="text" name="day"></p>
+                            </div>
+                            <div class="form__bottom">
+                                <div class="form__bottom__left">
+                                    <p>進め方</p>
+                                    <p>
+                                        <select name="progress">
+                                            <option>ゆっくり</option>
+                                            <option>サクサク</option>
+                                            <option>かなりサクサク</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="form__bottom__right">
+                                    <p>募集人数</p>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>1人</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>2人</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>3人</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form__btn center">
+                                <a id="return_btn">
+                                    <img src="images/detail/cancel.png">
+                                </a>
+                                <!-- <input type="image" src="images/detail/recruitment.png" id="now_link"> -->
+                                <button type="button" id="now_link">
+                                    <img src="images/detail/recruitment.png">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_now">
+            <div class="modal__bg">
+                <div class="o-modal is-now">
+                    <p class="now_logo">パーティ募集中</p>
+                    <p class="now__title">クエストタイトルタイトルタイトルタイトルタイトル</p>
+                    <div class="now__text">
+                        一緒に力を合わせて、クエストにチャレンジしよう!<br>クリア経験者も初心者の方も大歓迎です。
+                    </div>
+                    <div class="now_menber">
+                        <p>現在の参加者</p>
+                        <p class="now_menber_scroll">
+                            <img src="images/index/index_modal_human.png">
+                            <img src="images/index/index_modal_human.png">
+                        </p>
+                    </div>
+                    <div class="now_btn center">
+                        <a id="now_wait" href="index.html">
+                            <img src="images/detail/wait.png">
+                        </a>
+                        <a id="now_start" href="index.html">
+                            <img src="images/detail/start.png">
+                        </a>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/common.js"></script>
+</body>
+</html>

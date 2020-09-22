@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目標管理サイト</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toastr.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/css_browser_selector.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+</head>
+
+<body id="index">
+   
+    <div class="wrapper">
+        <div class="innerBox">
+            <div class="template__top">
+                <p class="logo center" id="testtest">
+                    <span class="win-padding">LOGO</span>
+                </p>
+                <div class="template__player">
+                    <p><img src="images/index/white.png"></p>
+                    <p>
+                        <a href="">田中太郎</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="o-box is-index">
+                <div class="o-box is-index_left">
+                    <div class="o-box is-index_status">
+                        <img src="images/index/status_human_left.png" class="status__left__image">
+                        <img src="images/index/status_human_right.png" class="status__right__image">
+                        <div class="index_status__human">
+                            <img src="images/index/index_human.png" class="status__human">
+                            <div class="index_status__human-left">
+                                <div class="index_status__weapon">
+                                    <p class="center">武器</p>
+                                    <p><img src="images/index/weapon_box.png"></p>
+                                </div>
+                                <div class="index_status__weapon">
+                                    <p>帽子</p>
+                                    <p><img src="images/index/weapon_box.png"></p>
+                                </div>
+                                <div class="index_status__weapon">
+                                    <p>防具<br>(胴)</p>
+                                    <p><img src="images/index/weapon_box.png"></p>
+                                </div>
+                                <div class="index_status__weapon">
+                                    <p>防具<br>(足)</p>
+                                    <p><img src="images/index/weapon_box.png"></p>
+                                </div>
+                                <div class="index_status__weapon">
+                                    <p class="center">靴</p>
+                                    <p><img src="images/index/weapon_box.png"></p>
+                                </div>
+                            </div>
+                            <div class="index_status__human-right">
+                                <div class="index_status__accessory">
+                                    <p class="center">
+                                        アクセサリ1
+                                    </p>
+                                    <p class="center">
+                                        <img src="images/index/weapon_box.png">
+                                    </p>
+                                </div>
+                                <div class="index_status__accessory">
+                                    <p class="center">
+                                        アクセサリ2
+                                    </p>
+                                    <p class="center">
+                                        <img src="images/index/weapon_box.png">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index_status__level">
+                            <div class="index_right__top">
+                                <div class="index_right__top-image">
+                                    <img src="images/index/level.png">
+                                    <p class="center right__top__text win-top6">
+                                        Lv.<br><span class="font_b">15</span>
+                                    </p>
+                                </div>
+                                <div class="index_right__top-text">
+                                    <p class="name">
+                                        <span class="win-padding">名前名前名前</span>
+                                    </p>
+                                    <p class="lank">
+                                        <span class="win-padding">戦士</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="index_right__gauge">
+                                <div class="index_right__top-left">
+                                    <div class="index_right__top-exp">
+                                        <p><img src="images/index/EXP.png"></p>
+                                        <p>
+                                            <span style="display: block; width: 100%; background: linear-gradient(to bottom, #ffd300 2px, #b09615 10px); border-radius: 20px; height: 6px;"></span>
+                                            <span class="absolute__exp">100/100</span>
+                                        </p>
+                                    </div>
+                                    <div class="index_right__top-hp">
+                                        <p><img src="images/index/HP.png"></p>
+                                        <p>
+                                            <span style="display: block; width: 100%; background: linear-gradient(to bottom, #ffcb7e 2px, #c76130 10px); border-radius: 20px; height: 12px;"></span>
+                                            <span class="absolute__exp">100/100</span>
+                                        </p>
+                                    </div>
+                                    <div class="index_right__top-hp">
+                                        <p><img src="images/index/MP.png"></p>
+                                        <p>
+                                            <span style="display: block; width: 100%; background: linear-gradient(to bottom, #95fff9 2px, #3ab4c9 10px); border-radius: 20px; height: 12px;"></span>
+                                            <span class="absolute__exp">100/100</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="index_right__top-right">
+                                    <span class="win-padding">
+                                        スキルPt<br><span class="font_b">10/85</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="index_right__graph center">
+                                <canvas id="graph" width="342" height="200"></canvas>
+                                <a id="attack_plus"><img src="images/index/chart_plus.png"></a>
+                                <a id="attack_minus"><img src="images/index/chart_minus.png"></a>
+                                <a id="defense_plus"><img src="images/index/chart_plus.png"></a>
+                                <a id="defense_minus"><img src="images/index/chart_minus.png"></a>
+                                <a id="speed_plus"><img src="images/index/chart_plus.png"></a>
+                                <a id="speed_minus"><img src="images/index/chart_minus.png"></a>
+                                <a id="cleverness_plus"><img src="images/index/chart_plus.png"></a>
+                                <a id="cleverness_minus"><img src="images/index/chart_minus.png"></a>
+                                <a id="good_plus"><img src="images/index/chart_plus.png"></a>
+                                <a id="good_minus"><img src="images/index/chart_minus.png"></a>
+                                <span class="absolute__text__20">20</span>
+                                <span class="absolute__text__40">40</span>
+                                <span class="absolute__text__60">60</span>
+                                <span class="absolute__text__80">80</span>
+                                <span class="absolute__text__100">100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-box is-index_middle">
+                        <div class="index_middle__btn">
+                            <a href="#" class="o-btn is-index_item">
+                                <img src="images/index/item_btn.png">
+                            </a>
+                            <a href="#" class="o-btn is-index_adventure">
+                                <img src="images/index/adventure_btn.png">
+                            </a>
+                        </div>
+                        <div class="o-box is-index_box__status">
+                            <div class="index_box__status-image center">
+                                <img src="images/index/index_title-logo.png">
+                            </div>
+                            <p class="center index_box__status-title">
+                                <img src="images/index/equipment.png">
+                            </p>
+                            <div class="index_box__status-detail">
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="o-box is-index_bottom">
+                        <div class="o-box is-index_box__status">
+                            <div class="index_box__status-image center">
+                                <img src="images/index/index_title-logo.png">
+                            </div>
+                            <p class="center index_box__status-title">
+                                <img src="images/index/emblem.png">
+                            </p>
+                            <div class="index_box__status-detail">
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="o-box is-index_box__status">
+                            <div class="index_box__status-image center">
+                                <img src="images/index/index_title-logo.png">
+                            </div>
+                            <p class="center index_box__status-title">
+                                <img src="images/index/item_title.png">
+                            </p>
+                            <div class="index_box__money">
+                                <span class="b_w">所持金<br><span class="font_b">100</span>G</span>
+                            </div>
+                            <div class="index_box__status-detail">
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                                <div class="detail__content">
+                                    <img src="images/index/kari.png">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <div class="o-box is-index_right">
+                    <div class="index_right__image center">
+                        <img src="images/index/index_title-logo.png">
+                    </div>
+                    <div class="index_right__title center">
+                        <p><img src="images/index/dragon.png"></p>
+                        <p><img src="images/index/quest.png"></p>
+                    </div>
+                    <form action="#" class="index_right__form">
+                        <input class="search__box" type="search">
+                        <input class="search__logo" type="image" src="images/index/search.png">
+                    </form>
+                    <div class="o-btn is-index_right_form right">
+                        <a href="detail.html"><img src="images/index/new_item_btn.png"></a>
+                    </div>
+
+                    <div class="index_right__content">
+                        <div class="o-box is-index_right__content">
+                            <div class="right__content__title">
+                                <p><img src="images/index/scroll_image.png" alt=""></p>
+                                <p>タイトルタイトル</p>
+                                <p><a class="js-modal-open" data-target="modal_reward" id="hanko_link"><img src="images/index/detail__link.png"></a></p>
+                            </div>
+                            <table class="o-table is-index">
+                                <tr>
+                                    <td class="w-171">依頼者：田中太郎</td>
+                                    <td class="w-112"><span class="text-left">レア度</span><span class="text-right color_red">A</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="w-171">
+                                        PT:<br>
+                                        田中太郎、田中太郎
+                                        田中太郎、田中太郎
+                                    </td>
+                                    <td class="w-112"><span class="text-left">難易度</span> <span class="text-right color_yellow">★★★</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-112 f-11"><span class="text-left">達成期限</span> <span class="text-right">10/12</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="w-100">
+                                        あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                                    </td>
+                                </tr>
+                            </table>
+                            <img class="clear__logo" src="images/index/index_clear.png">
+                        </div>
+                        <div class="o-box is-index_right__content">
+                            <div class="right__content__title">
+                                <p><img src="images/index/scroll_image.png" alt=""></p>
+                                <p>タイトルタイトル</p>
+                                <p><a href="#" class="challenge__link js-modal-open" data-target="modal_index">挑戦中(1人)</a></p>
+                            </div>
+                            <table class="o-table is-index">
+                                <tr>
+                                    <td class="w-171">依頼者：田中太郎</td>
+                                    <td class="w-112"><span class="text-left">レア度</span><span class="text-right color_red">A</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="w-171">
+                                        PT:<br>
+                                        
+                                    </td>
+                                    <td class="w-112"><span class="text-left">難易度</span> <span class="text-right color_yellow">★★★</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-112 f-11"><span class="text-left">達成期限</span> <span class="text-right">10/12</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="w-100">
+                                        あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                                    </td>
+                                </tr>
+                            </table>
+                           
+                        </div>
+                        <div class="o-box is-index_right__content">
+                            <div class="right__content__title">
+                                <p><img src="images/index/scroll_image.png" alt=""></p>
+                                <p>タイトルタイトル</p>
+                                <p><a href="#" class="challenge__link js-modal-open" data-target="modal_index">挑戦中(PT)</a></p>
+                            </div>
+                            <table class="o-table is-index">
+                                <tr>
+                                    <td class="w-171">依頼者：田中太郎</td>
+                                    <td class="w-112"><span class="text-left">レア度</span><span class="text-right color_red">A</span></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="w-171">
+                                        PT:<br>
+                                        田中太郎、田中太郎
+                                        田中太郎、田中太郎
+                                    </td>
+                                    <td class="w-112"><span class="text-left">難易度</span> <span class="text-right color_yellow">★★★</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-112 f-11"><span class="text-left">達成期限</span> <span class="text-right">10/12</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="w-100">
+                                        あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_reward">
+            <div class="modal__bg">
+                <div class="o-modal is-index_reward">
+                    <p class="index_reward__title center">クエストタイトルタイトル</p>
+                    <div class="index_reward__content">
+                        <div class="content__box">
+                            依頼者：田中太郎
+                        </div>
+                        <div class="content__box">
+                            <span class="f-11">達成期限</span>
+                            <span class="f-12">10/12</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">レア度</span>
+                            <span class="m-l70 color_r">A</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">難易度</span>
+                            <span class="m-l40 color_y">★★★</span>
+                        </div>
+                    </div>
+                    <div class="index_reward__text">
+                        <p>
+                            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                        </p>
+                        <img src="images/index/index_clear.png" id="hanko">
+                    </div>
+                    <p class="award__title">報酬</p>
+                    <div class="index_reward__middle">
+                        <div class="index_reward__middle-left">
+                            <div class="middle-left__content">
+                                <span class="middle-left__content__number">3</span>
+                            </div>
+                        </div>
+                        <div class="index_reward__middle-center">
+                            <p class="right">
+                                <span>1,000</span>G
+                            </p>
+                        </div>
+                        <div class="index_reward__middle-right">
+                            <p class="right">
+                                <span>20</span>EXP
+                            </p>
+                        </div>
+                    </div>
+                    <div class="index_reward__bottom">
+                        <div class="index_reward__bottom-left">
+                            <p class="index_reward_bottom-left-t">達成パーティ</p>
+                            <div class="index_reward__image">
+                                <img src="images/index/index_modal_human.png">
+                                <img src="images/index/index_modal_human.png">
+                                <img src="images/index/index_modal_human.png">
+                                <img src="images/index/index_modal_human.png">
+                            </div>
+                        </div>
+                        <form class="o-form is-index_reward_modal" name="reward_form" id="reward_form" onsubmit="doSomething();return false;">
+                            <p class="form__title">感想を入力しよう</p>
+                            <div class="form__detail">
+                                <div class="form__detail__select">
+                                    <label>
+                                        <input type="radio" name="level">
+                                        <span>かんたん！</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="level">
+                                        <span>まだ余裕～</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="level">
+                                        <span>まあまあかな</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="level">
+                                        <span>ちょっと苦戦した...!</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="level">
+                                        <span>むずかしすぎるよ</span>
+                                    </label>
+                                </div>
+                                <div class="form__detail__text">
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                            <div class="form__submit">
+                                <button type="button" id="modal_reward_btn" class="js-modal-close hanko_back">
+                                    <img src="images/index/modal_reward_btn.png">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <a id="modal_reward_btn" class="js-modal-close">閉じる</a> -->
+                    <a class="js-modal-close absolute_image hanko_back"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_index">
+            <div class="modal__bg">
+                <div class="o-modal is-index_check">
+                    <p class="index_check__title center">クエストタイトルタイトル</p>
+                    <p class="index_check__challenge__number center">
+                        挑戦中1人
+                    </p>
+                    <div class="index_check__content">
+                        <div class="content__box">
+                            依頼者：田中太郎
+                        </div>
+                        <div class="content__box">
+                            <span class="f-11">達成期限</span>
+                            <span class="f-12">10/12</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">レア度</span>
+                            <span class="m-l70 color_r">A</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">難易度</span>
+                            <span class="m-l40 color_y">★★★</span>
+                        </div>
+                    </div>
+                    <div class="index_check__text">
+                        <p>
+                            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                        </p>
+                    </div>
+                    <div class="index_check__clear">
+                        <p class="clear__title">クリアした人</p>
+                        <p class="clear__human">
+                            <img src="images/index/index_modal_human.png">
+                            <img src="images/index/index_modal_human.png">
+                        </p>
+                    </div>
+                    <div class="index_check__reward">
+                        <p class="check__reward__title">報酬</p>
+                        <div class="index_reward__middle">
+                            <div class="index_reward__middle-left">
+                                <div class="middle-left__content">
+                                    <span class="middle-left__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="index_reward__middle-center">
+                                <p class="right">
+                                    <span>1,000</span>G
+                                </p>
+                            </div>
+                            <div class="index_reward__middle-right">
+                                <p class="right">
+                                    <span>20</span>EXP
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index_check__btn">
+                        <a class="detail_link"><img src="images/index/party_btn.png"></a>
+                        <a href="#"><img src="images/index/scout_btn.png"></a>
+                        <a href="#" id="clear_btn"><img src="images/index/clear_btn.png"></a>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_finish">
+            <div class="modal__bg">
+                <div class="o-modal is-modal_finish">
+                    <p class="finish_logo">クエストを完了する</p>
+                    <p class="finish__title">クエストタイトルタイトルタイトルタイトルタイトル</p>
+                    <form class="o-form is-finish">
+                        <div class="form__left">
+                            <p class="form__title">
+                                クエストの完了を報告しよう
+                            </p>
+                            <textarea class="form__text">クエストが終わりました!</textarea>
+                            <button type="button" class="js-modal-close form_submit" id="finish_submit">
+                                <img src="images/index/finish_submit.png">
+                            </button>
+                            <div class="form__human">
+                                <p>達成パーティ</p>
+                                <p class="form__human__scroll">
+                                    <img src="images/index/index_modal_human.png">
+                                    <img src="images/index/index_modal_human.png">
+                                    <img src="images/index/index_modal_human.png">
+                                    <img src="images/index/index_modal_human.png">
+                                </p>
+                            </div>
+                            <div class="form__message">
+                                <p class="form__message_title">
+                                    これまでのメッセージ
+                                </p>
+                                <div class="form__message__box">
+                                    <p>2020.4.1 新しいクエスト「タイトル」のパーティ募集が開始されました。</p>
+                                    <p>2020.4.2 新しいクエスト「タイトル」が開始されました。</p>
+                                    <p>2020.4.10 「タイトル」の完了を報告しました。</p>
+                                    <p>2020.4.11 〇〇〇〇さんからメッセージがありました。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__right">
+                            <input type="file" id="image_file" class="file" accept="image/*" multiple="multiple">
+                            <label class="file_mask">
+                                <span></span>
+                                <input type="text" id="mask_file">
+                            </label>
+                            <div id="thumbnail">
+                                
+                            </div>
+                            <div id="bigImage"></div>
+                        </div>
+                    </form>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_detail">
+            <div class="modal__bg">
+                <div class="o-modal is-index_check">
+                    <p class="index_check__title center">クエストタイトルタイトル</p>
+                    <p class="index_check__challenge__number center">
+                        挑戦中1人
+                    </p>
+                    <div class="index_check__content">
+                        <div class="content__box">
+                            依頼者：田中太郎
+                        </div>
+                        <div class="content__box">
+                            <span class="f-11">達成期限</span>
+                            <span class="f-12">10/12</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">レア度</span>
+                            <span class="m-l70 color_r">A</span>
+                        </div>
+                        <div class="content__box">
+                            <span class="left">難易度</span>
+                            <span class="m-l40 color_y">★★★</span>
+                        </div>
+                    </div>
+                    <div class="index_check__text">
+                        <p>
+                            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                        </p>
+                    </div>
+                    <div class="index_check__clear">
+                        <p class="clear__title">クリアした人</p>
+                        <p class="clear__human">
+                            <img src="images/index/index_modal_human.png">
+                            <img src="images/index/index_modal_human.png">
+                        </p>
+                    </div>
+                    <div class="index_check__reward">
+                        <p class="check__reward__title">報酬</p>
+                        <div class="index_reward__middle">
+                            <div class="index_reward__middle-left">
+                                <div class="middle-left__content">
+                                    <span class="middle-left__content__number">3</span>
+                                </div>
+                            </div>
+                            <div class="index_reward__middle-center">
+                                <p class="right">
+                                    <span>1,000</span>G
+                                </p>
+                            </div>
+                            <div class="index_reward__middle-right">
+                                <p class="right">
+                                    <span>20</span>EXP
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index_check__btn">
+                        <a href="index.html" id="one_challenge"><img src="images/detail/one_challenge_btn.png"></a>
+                        <a href="#" id="party_link"><img src="images/index/party_btn.png"></a>
+                        <a href="#"><img src="images/index/scout_btn.png"></a>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_party">
+            <div class="modal__bg">
+                <div class="o-modal is-party">
+                    <p class="party_logo">パーティ募集</p>
+                    <p class="party__title">クエストタイトルタイトルタイトルタイトルタイトル</p>
+                    <div class="o-form is-party">
+                        <form>
+                            <div class="form__top">
+                                <p>メッセージ欄</p>
+                                <p><textarea></textarea></p>
+                            </div>
+                            <div class="form__middle">
+                                <p>達成予定日</p>
+                                <p><input type="text" name="day"></p>
+                            </div>
+                            <div class="form__bottom">
+                                <div class="form__bottom__left">
+                                    <p>進め方</p>
+                                    <p>
+                                        <select name="progress">
+                                            <option>ゆっくり</option>
+                                            <option>サクサク</option>
+                                            <option>かなりサクサク</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="form__bottom__right">
+                                    <p>募集人数</p>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>1人</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>2人</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="level">
+                                            <span>3人</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form__btn center">
+                                <a id="return_btn">
+                                    <img src="images/detail/cancel.png">
+                                </a>
+                                <button type="button" id="now_link">
+                                    <img src="images/detail/recruitment.png">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal" id="modal_now">
+            <div class="modal__bg">
+                <div class="o-modal is-now">
+                    <p class="now_logo">パーティ募集中</p>
+                    <p class="now__title">クエストタイトルタイトルタイトルタイトルタイトル</p>
+                    <div class="now__text">
+                        一緒に力を合わせて、クエストにチャレンジしよう!<br>クリア経験者も初心者の方も大歓迎です。
+                    </div>
+                    <div class="now_menber">
+                        <p>現在の参加者</p>
+                        <p>
+                            <img src="images/index/index_modal_human.png">
+                            <img src="images/index/index_modal_human.png">
+                        </p>
+                    </div>
+                    <div class="now_btn center">
+                        <a id="now_wait" href="index.html">
+                            <img src="images/detail/wait.png">
+                        </a>
+                        <a id="now_start" href="index.html">
+                            <img src="images/detail/start.png">
+                        </a>
+                    </div>
+                    <a class="js-modal-close absolute_image"><img src="images/modal_back_logo.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/common.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+.o-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    @include mq {
+      outline: 0;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+  @include m(index_item){
+    margin: 50px auto 30px;
+    &:hover{
+      box-shadow: none;
+      position: relative;
+      top: 3px;
+      opacity: 1;
+    }
+  }
+  @include m(index_adventure){
+    &:hover{
+      box-shadow: none;
+      position: relative;
+      top: 3px;
+      opacity: 1;
+    }
+  }
+  @include m(index_right_form){
+    text-align: right;
+    padding-right: 8px;
+    margin: 10px 0 20px;
+    &:hover{
+      box-shadow: none;
+      position: relative;
+      top: 3px;
+      opacity: 1;
+    }
+    a{
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+  @include m(detail){
+    width: 270px;
+    margin: 0 auto;
+    border: none;
+    &:hover{
+      box-shadow: none;
+      position: relative;
+      top: 3px;
+      opacity: 1;
+      border: none;
+    }
+    img{
+      display: inline-block;
+      border: none;
+    }
+  }
+}

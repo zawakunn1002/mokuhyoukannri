@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
+
+*{
+  min-height:0;
+  min-width : 0;
+}
+
+.active{
+  display: block;
+}
+
+
+html, body {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-weight: bold;
+}
+
+.font_kozuka{
+  font-family: "Kozuka Gothic Pr6N", sans-serif;
+}
+
+.font_yugo{
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+}
+
+.font_yumin{
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+.font_hirasan{
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴシック", Meiryo, メイリオ, sans-serif;
+}
+
+.font_hiramin {
+  font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+
+.font_hirakaku {
+  font-family: "HiraKakuProN-W3","ヒラギノ角ゴ ProN W3","ヒラギノ角ゴ Pro W3","HiraKakuPro-W3","HiraKakuProN-W6", "ヒラギノ角ゴ ProN W6","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS Pgothic","Osaka",sans-serif,Helvetica, Helvetica Neue, Arial, Verdana;
+}
+
+.font_hel{
+  font-family: Helvetica, Helvetica Neue,sans-serif,;
+}
+
+.font_meirio{
+  font-family:'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+
+.font_lato{
+  font-family: 'Lato', sans-serif;
+}
+
+.font_noto{
+  font-family: 'Noto Serif JP', serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+header, nav, main, footer, small, button, label {
+  display: block;
+}
+
+a,button {
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+button:hover, button:active{
+  outline: 0;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  outline: none;
+}
+
+a:hover, a:active{
+  outline: 0;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+  color: #a5a5a5;
+}
+:-ms-input-placeholder {
+  color: #a5a5a5;
+}
+::-moz-placeholder {
+  color: #a5a5a5;
+}
+::-placeholder {
+  color: #a5a5a5;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  border: 1px solid #b5b5b5;
+  border-radius: 0;
+  outline: none;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+select {
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-image: url(../images/back.jpg);
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  min-width: 1280px;
+  
+}
+
+.containner {
+  padding-bottom: 40px;
+  @include mq {
+    padding-bottom: 80px;
+  }
+  @include m(pb_none) {
+    padding-bottom: 0;
+  }
+}
+
+.flex{
+  display: flex;
+}
+
+
+.innerBox {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.min-620{
+  min-height: 620px;
+}
+
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.left{
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.display_to_mq {
+  @include mq {
+    display: none;
+  }
+}
+
+.display_to_mq_m {
+  @include mq_m {
+    display: none;
+  }
+}
+
+.display_mq {
+  display: none;
+  &.is-inline{
+    @include mq {
+      display: inline;
+    }
+  }
+  &.is-block{
+    @include mq {
+      display: block;
+    }
+  }
+}
+
+.display_mq_m {
+  display: none;
+  &.is-inline{
+    @include mq_m {
+      display: inline;
+    }
+  }
+  &.is-block{
+    @include mq_m {
+      display: block;
+    }
+  }
+}
+
+
+
+.relative_wrap {
+  position: relative;
+}
+
+
+.inline_block {
+  display: inline-block;
+}
+
+
+.text_indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+
+
+.font_mincho {
+  font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "Yu Mincho", "YuMincho", serif;
+}
+
+.font_gothic {
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, arial, helvetica, sans-serif;
+}
+
+.c_pink {
+  color: #f29c9f;
+}
+
+.post_cnt {
+  iframe {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+img.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+img.alignleft {
+  display: block;
+  margin-right: auto;
+}
+
+img.alignright {
+  display: block;
+  margin-left: auto;
+}
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &::focus {
+      outline-offset: -2px;
+    }
+}
+
+.win {
+  .index_box__status-detail{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_box__status-detail::-webkit-scrollbar{
+    display: none;
+  }
+  .index_right__content{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_right__content::-webkit-scrollbar{
+    display: none;
+  }
+  .index_reward__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_reward__text::-webkit-scrollbar{
+    display: none;
+  }
+
+  .index_reward__middle-left{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_reward__middle-left::-webkit-scrollbar{
+    display: none;
+  }
+  .index_check__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .index_check__text::-webkit-scrollbar{
+    display: none;
+  }
+  .clear__human{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .clear__human::-webkit-scrollbar{
+    display: none;
+  }
+  .detail__box__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .detail__box__text::-webkit-scrollbar{
+    display: none;
+  }
+  .detail__box__image{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .detail__box__image::-webkit-scrollbar{
+    display: none;
+  }
+  .now__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .now__text::-webkit-scrollbar{
+    display: none;
+  }
+  .now_menber_scroll{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .now_menber_scroll::-webkit-scrollbar{
+    display: none;
+  }
+  .form__human__scroll{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .form__human__scroll::-webkit-scrollbar{
+    display: none;
+  }
+  .form__message__box{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .form__message__box::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.vista {
+  .index_box__status-detail{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_box__status-detail::-webkit-scrollbar{
+    display: none;
+  }
+  .index_right__content{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_right__content::-webkit-scrollbar{
+    display: none;
+  }
+  .index_reward__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_reward__text::-webkit-scrollbar{
+    display: none;
+  }
+  .index_reward__middle-left{
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .index_reward__middle-left::-webkit-scrollbar{
+    display: none;
+  }
+  .index_check__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .index_check__text::-webkit-scrollbar{
+    display: none;
+  }
+  .clear__human{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .clear__human::-webkit-scrollbar{
+    display: none;
+  }
+  .detail__box__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .detail__box__text::-webkit-scrollbar{
+    display: none;
+  }
+  .detail__box__image{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .detail__box__image::-webkit-scrollbar{
+    display: none;
+  }
+  .now__text{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .now__text::-webkit-scrollbar{
+    display: none;
+  }
+  .now_menber_scroll{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .now_menber_scroll::-webkit-scrollbar{
+    display: none;
+  }
+  .form__human__scroll{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .form__human__scroll::-webkit-scrollbar{
+    display: none;
+  }
+  .form__message__box{
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .form__message__box::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.shadow_white{
+  text-shadow:
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,
+                    0 0 3px white,;
+}
+

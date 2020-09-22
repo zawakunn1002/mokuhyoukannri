@@ -1,0 +1,142 @@
+.o-border{
+    width: 100%;
+    @include m(title_left){
+        background: linear-gradient(to right, $color_dg 0%, $color_dg 68%, $color_lg 68%, $color_lg 100%);
+        p{
+            color:white;
+            letter-spacing: 0.025em;
+            padding: 14px 0 14px 0.5em;
+            font-size: 18px;
+            @include mq{
+                font-size: 40px;
+                padding: 14px 0 14px 2em;
+            }
+            span{
+                font-size: 28px;
+                position: relative;
+                top: 4px;
+                @include mq{
+                    font-size: 60px;
+                    top: 8px;
+                }
+            }
+        }
+    }
+    @include m(title_right){
+        background: linear-gradient(to right, $color_dg 0%, $color_dg 32%, $color_lg 32%, $color_lg 100%);
+        p{
+            color:white;
+            letter-spacing: 0.025em;
+            padding: 14px 0 14px 35%;
+            font-size: 18px;
+            text-indent: -1em;
+            line-height: 30px;
+            @include mq{
+                font-size: 40px;
+                padding: 18px 0 30px 35%;
+                line-height: 50px;
+            }
+            @include mq_m{
+                line-height: 1;
+                padding: 18px 0 30px 32%;
+            }
+            .font_big{
+                font-size: 28px;
+                position: relative;
+                top: 4px;
+                @include mq{
+                    font-size: 60px;
+                    top: 8px;
+                }
+            }
+            .font_small{
+                font-size: 14px;
+                @include mq{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    @include m(title_light){
+        background: linear-gradient(to right, $color_dg 0%, $color_dg 81%, $color_lg 81%, $color_lg 100%);
+        position: relative;
+        @include mq{
+            background: linear-gradient(to right, $color_dg 0%, $color_dg 81%, $color_lg 81%, $color_lg 100%);
+        }
+        .sec5_title{
+            color: white;
+            font-size: 18px;
+            padding: 10px 0;
+            span{
+                font-size: 30px;
+            }
+        }
+        .title_absolute{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 4%;
+            font-size: 30px;
+            color: white;
+            padding-top: 10px;
+        }
+    }
+    @include m(title_dark){
+        background: linear-gradient(to right, $color_lg 0%, $color_lg 81%, $color_dg 81%, $color_dg 100%);
+        position: relative;
+        @include mq{
+            background: linear-gradient(to right, $color_lg 0%, $color_lg 81%, $color_dg 81%, $color_dg 100%);
+        }
+        .sec5_title{
+            color: white;
+            font-size: 18px;
+            padding: 10px 0;
+            span{
+                font-size: 30px;
+            }
+        }
+        .title_absolute{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 4%;
+            font-size: 30px;
+            color: white;
+            padding-top: 10px;
+        }
+    }
+    @include m(index_light-green){
+        background-color: $color_lg;
+        position: relative;
+        :before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom:-52px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            border: 24px solid transparent;
+            border-top: 28px solid $color_lg;
+        }
+        p{
+            color: white;
+            display: inline-block;
+            line-height: 60px;
+            letter-spacing: -0.05em;
+            font-size: 20px;
+            position: relative;
+            padding: 23px 0;
+            @include mq{
+                padding: 46px 0;
+                font-size: 48px;
+            }
+            @include mq_m{
+                padding: 69px 0;
+            }
+        }
+    }
+}

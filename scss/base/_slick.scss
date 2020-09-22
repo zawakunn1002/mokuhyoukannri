@@ -1,0 +1,23 @@
+.prev_btn{
+  position: absolute;
+  left: -50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+.next_btn{
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}

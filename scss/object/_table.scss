@@ -1,0 +1,48 @@
+.o-table{
+    @include m(index){
+        width:100%;
+        border-collapse: separate;
+        border-spacing: 8px 5px;
+        position: relative;
+        tr{
+            .w-112{
+                width: 112px;
+                padding: 8px 5px;
+            }
+            .w-171{
+                width: 171px;
+                padding: 8px 11px;
+            }
+            .w-100{
+                width: 100%;
+                padding: 8px 11px;
+
+            }
+            .f-11{
+                font-size: 11px;
+            }
+            td{
+                font-size: 13px;
+                border-radius: 7px;
+                background-color: rgb(95, 63, 42);
+                color: white;
+                letter-spacing: 0.075em;
+                line-height: 16px;
+                margin-bottom: 5px;
+                .text-left{
+                    float: left;
+                }
+                .text-right{
+                    float: right;
+                }
+                .color_yellow{
+                    color: #ffea60;
+                }
+                .color_red{
+                    color: #ff6060;
+                }
+            }
+
+        }    
+    }
+}

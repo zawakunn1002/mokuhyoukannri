@@ -1,0 +1,112 @@
+.o-mv{
+    @include m(index){
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    @include m(about){
+        width: 100%;
+        position: relative;
+        background-image: url(../images/mv/about_mv.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 300px;
+        display: flex;
+        -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+        align-items: center; /* 縦方向中央揃え */
+        -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+        justify-content: center;
+        p{
+            color: white;
+            font-size: 24px;
+            @include mq{
+                font-size: 30px;
+            }
+            @include mq_m{
+                font-size: 40px;
+            }
+        }
+    }
+    @include m(inquiry){
+        width: 100%;
+        position: relative;
+        background-image: url(../images/mv/inquiry_mv.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 400px;
+        p{
+            color: white;
+        }
+        .inquiry__top{
+            font-size: 18px;
+            padding: 50px 2.7% 20px;
+            @include mq{
+                font-size: 28px;
+            }
+        }
+        .inquiry__main{
+            font-size: 26px;
+            line-height: 39px;
+            padding: 0 2.7% 20px;
+            @include mq{
+                padding: 0 2.7% 40px;
+                font-size: 39px;
+                line-height: 50px;
+            }
+            @include mq_m{
+                font-size: 60px;
+                line-height: 78px;
+            }
+        }
+        .inquiry__box{
+            display: flex;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 509px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+            @include mq{
+                position: absolute;
+                bottom: -90px;
+                right: 10px;
+                width: 45%;
+            }
+            @include mq_m{
+                width: 509px;
+                right: 60px;
+                bottom: 0;
+            }
+            .inquiry__box__detail{
+                color: #AB7F3E;
+                background-color: white;
+                border-radius: 50%;
+                font-size: 16px;
+                line-height: 24px;
+                width: 45%;
+                max-width: 162px;
+                padding: 10px 0;
+                margin: 0 auto;
+                @include mq{
+                    width: 120px;
+                    height: 120px;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                @include mq_m{
+                    width: 162px;
+                    height: 162px;
+                    font-size: 30px;
+                    line-height: 36px;
+                    
+                }
+            }
+
+        }
+    }
+}
